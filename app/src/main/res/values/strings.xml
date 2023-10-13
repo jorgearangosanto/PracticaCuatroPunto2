@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PracticaCuatro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="busqueda_name">"aca de buscara el codigo QR "</string>
+    <string name="captura_name">aca se capttura codigo QR</string>
+    <string name="denuncia_name">acase denunciara por medio de mesaje de texto o whatsap</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="busqueda_alias">busqueda</string>
+    <string name="captura_alias">captura</string>
+    <string name="denuncia_alias">denuncia</string>
+    <string name="email_editex">Email</string>
+    <string name="password_text_input">Contrasena</string>
+    <string name="noregistro">No estas registrado</string>
+    <string name="No_estas_registrado">No estas registrado</string>
+    <string name="Registro">Registrate</string>
+    <string name="Ir">Ir</string>
+    <string name="rep_pasword">repetir contrasena</string>
+    <string name="rut">RUT</string>
+</resources>

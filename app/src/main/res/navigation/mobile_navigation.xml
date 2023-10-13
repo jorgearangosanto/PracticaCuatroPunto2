@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_busqueda">
+    <fragment
+        android:id="@+id/navigation_busqueda"
+        android:name="com.santo.practicacuatro.ui.busqueda.BusquedaFragment"
+        android:label="@string/denuncia_alias"
+        tools:layout="@layout/fragment_busqueda" />
+    <fragment
+        android:id="@+id/navigation_captura"
+        android:name="com.santo.practicacuatro.ui.captura.CapturaFragment"
+        android:label="@string/captura_alias"
+        tools:layout="@layout/fragment_captura" />
+    <fragment
+        android:id="@+id/navigation_denuncia"
+        android:name="com.santo.practicacuatro.ui.denuncia.DenunciaFragment"
+        android:label="@string/captura_alias"
+        tools:layout="@layout/fragment_denuncia" />
+</navigation>

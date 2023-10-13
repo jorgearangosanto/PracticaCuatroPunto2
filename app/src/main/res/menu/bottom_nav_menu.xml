@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_busqueda"
+
+        android:title="@string/busqueda_alias" />
+
+    <item
+        android:id="@+id/navigation_captura"
+
+        android:title="@string/captura_alias" />
+
+    <item
+        android:id="@+id/navigation_denuncia"
+
+        android:title="@string/denuncia_alias" />
+
+</menu>

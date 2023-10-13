@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1042466365650",
+    "project_id": "practicacuatro-b4df4",
+    "storage_bucket": "practicacuatro-b4df4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042466365650:android:3d4e1b6a2487615e608d0b",
+        "android_client_info": {
+          "package_name": "com.santo.practicacuatro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyOFYa79Lx2vUsdNBxeZuiuWELR9gTx6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
