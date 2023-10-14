@@ -29,14 +29,14 @@ class RegisterActivity : AppCompatActivity() {
         val view = registerBinding.root
         setContentView(view)
 
-        /*val mensaje5observer = Observer<String>{mensaje5->
+        val mensaje5observer = Observer<String>{mensaje5->
             registerBinding.textInputRegisterPassword.setText(mensaje5.toString())
 
         }
-        registerMainViewModel.mensaje5.observe(this,mensaje5observer)*/
-        val mensaje5observer = Observer<String> {mensaje5 ->
-            Toast.makeText(this, mensaje5, Toast.LENGTH_LONG).show()}
         registerMainViewModel.mensaje5.observe(this,mensaje5observer)
+        /*val mensaje5observer = Observer<String> {mensaje5 ->
+            Toast.makeText(this, mensaje5, Toast.LENGTH_LONG).show()}
+        registerMainViewModel.mensaje5.observe(this,mensaje5observer*/
 
         registerMainViewModel.registerSuccess.observe(this){
             onBackPressedDispatcher.onBackPressed()
