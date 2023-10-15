@@ -1,6 +1,7 @@
 package com.santo.practicacuatro.data
 
 import android.util.Log
+import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -30,10 +31,13 @@ class UserRepository {
             val result = auth.signInWithEmailAndPassword(email,password).await()
             ResourceRemote.Success(data = result.user?.uid)
         } catch (e:FirebaseAuthException){
-            Log.e("Register",e.localizedMessage)
+            Log.e("FirebaseAuthException",e.localizedMessage)
             ResourceRemote.Error(message=e.localizedMessage)
         }catch (e:FirebaseNetworkException){
-            Log.e("RegisterNetwork",e.localizedMessage)
+            Log.e("FirebaseNetworkException",e.localizedMessage)
+            ResourceRemote.Error(message=e.localizedMessage)
+        }catch (e: FirebaseException){
+            Log.e("FirebaseException",e.localizedMessage)
             ResourceRemote.Error(message=e.localizedMessage)
         }
     }

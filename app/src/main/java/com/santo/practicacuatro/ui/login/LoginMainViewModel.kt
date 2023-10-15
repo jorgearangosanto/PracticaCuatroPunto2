@@ -15,8 +15,8 @@ import kotlinx.coroutines.launch
 class LoginMainViewModel: ViewModel() {
     private var userRepository = UserRepository()
 
-    /*private val _registerSuccess:MutableLiveData<Boolean> = MutableLiveData()
-    val registerSuccess : LiveData<Boolean> = _registerSuccess*/
+    private val _registerSuccess:MutableLiveData<Boolean> = MutableLiveData()
+    val registerSuccess : LiveData<Boolean> = _registerSuccess
 
 
 
@@ -43,7 +43,7 @@ class LoginMainViewModel: ViewModel() {
                         mensaje5.value = "el correo electronico esta mal escrito"
                     }
                     else{
-                       /* viewModelScope.launch{
+                       viewModelScope.launch{
                             val result  = userRepository.loginUser(email,password)
                             result.let {resourceRemote ->
                                 when(resourceRemote){
@@ -56,13 +56,15 @@ class LoginMainViewModel: ViewModel() {
                                         when(msg){
                                             "The email address is already in use by another account."-> msg= "Ya existe una cuenta con ese correo"
                                             "A network error (such as timeout, interrupted connection or unreachable host) has occurred."-> msg=" conectese a una red"
+                                            "An internal error has occurred. [ INVALID_LOGIN_CREDENTIALS ]"-> msg= "contrasena invalida"
                                         }
+
                                         mensaje5.postValue (msg)
 
                                     }
                                     else->{
                                         //no use
-                                    }*/
+                                    }
 
                         }
 
@@ -71,4 +73,4 @@ class LoginMainViewModel: ViewModel() {
         }
     }
 }}
-    //}}
+        }   }   }

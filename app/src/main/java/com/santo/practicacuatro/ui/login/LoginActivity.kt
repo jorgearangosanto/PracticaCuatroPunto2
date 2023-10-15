@@ -24,6 +24,17 @@ class LoginActivity : AppCompatActivity() {
 
         val view = loginBinding.root
         setContentView(view)
+        /*val mensaje5observer = Observer<String>{mensaje5->
+            loginBinding.IrButton3.setText(mensaje5.toString())
+
+        }
+        loginMainViewModel.mensaje5.observe(this,mensaje5observer)*/
+        /*loginMainViewModel.mensaje5.observe(this){
+            val intent = Intent(this, BottomNavigationActivity::class.java)
+            startActivity(intent)
+            finish()
+        }*/
+
 
         loginBinding.registerButton.setOnClickListener {
             val intent = Intent(this,RegisterActivity::class.java)
@@ -39,16 +50,17 @@ class LoginActivity : AppCompatActivity() {
         }
         loginMainViewModel.mensaje5.observe(this,mensaje5observer)*/
 
-       /* loginMainViewModel.registerSuccess.observe(this){
+        loginMainViewModel.registerSuccess.observe(this){
             val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
-        }*/
+            finish()
+        }
 
         loginBinding.IrButton3.setOnClickListener {
             val email : String = loginBinding.textInputEditText.text.toString()
             val password : String = loginBinding.passordInput.text.toString()
-            val intent = Intent(this, BottomNavigationActivity::class.java)
-           startActivity(intent)
+            /*val intent = Intent(this, BottomNavigationActivity::class.java)
+           startActivity(intent)*/
             loginMainViewModel.validateFields(email,password)
 
         }
