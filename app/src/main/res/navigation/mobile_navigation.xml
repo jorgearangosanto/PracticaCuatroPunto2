@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/navigation_busqueda"
         android:name="com.santo.practicacuatro.ui.busqueda.BusquedaFragment"
-        android:label="@string/denuncia_alias"
+        android:label="@string/busqueda_alias"
         tools:layout="@layout/fragment_busqueda" />
     <fragment
         android:id="@+id/navigation_captura"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/navigation_denuncia"
         android:name="com.santo.practicacuatro.ui.denuncia.DenunciaFragment"
-        android:label="@string/captura_alias"
+        android:label="@string/denuncia_alias"
         tools:layout="@layout/fragment_denuncia" />
 </navigation>

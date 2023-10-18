@@ -20,4 +20,11 @@
     <string name="Ir">Ir</string>
     <string name="rep_pasword">repetir contrasena</string>
     <string name="rut">RUT</string>
+    <string name="complaint_motivo">Motivo de la denunci</string>
+    <string name="complaint_municipio">Municipio</string>
+    <string name="complaint_nameEstablecimiento">Nombre del establecimiento</string>
+    <string name="complaint_direccion">Direccion</string>
+    <string name="complaint_telefono">Telefono</string>
+    <string name="complaint_boton_denuciar">Denunciar</string>
+    <string name="field">*Campo obligatorio</string>
 </resources>

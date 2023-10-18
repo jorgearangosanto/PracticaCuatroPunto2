@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/onstrainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.denuncia.DenunciaFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -30,4 +34,92 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/motivo_layaou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:helperText="@string/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/motivo_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complaint_motivo" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/municipio_layau"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:helperText="@string/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/motivo_layaou">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/municipio_editext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complaint_municipio" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombreEstablecimiento_layaou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/municipio_layau">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreEsatblecimiento_editext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complaint_nameEstablecimiento" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/direccion_layaou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreEstablecimiento_layaou">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/direccion_Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complaint_direccion" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/telefono_layaou"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:helperText="@string/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/direccion_layaou">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefono_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/complaint_telefono" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_denunciar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/complaint_boton_denuciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefono_layaou" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,18 +1,10 @@
 package com.santo.practicacuatro.ui.register
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.santo.practicacuatro.R
-import com.santo.practicacuatro.databinding.ActivityLoginBinding
 import com.santo.practicacuatro.databinding.ActivityRegisterBinding
-import com.santo.practicacuatro.ui.bottom.BottomNavigationActivity
-import com.santo.practicacuatro.ui.login.LoginMainViewModel
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -47,10 +39,11 @@ class RegisterActivity : AppCompatActivity() {
             val email : String = registerBinding.textInputEmailRegister.text.toString()
             val contrasena : String =registerBinding.textInputRegisterPassword.text.toString()
             val repcontrasena : String =registerBinding.textInputReppasworwdRegister.text.toString()
+            val rut : String=registerBinding.textInputRut.text.toString()
             /*val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)*/
 
-            registerMainViewModel.validateRegister(email,contrasena,repcontrasena)
+            registerMainViewModel.validateRegister(email,contrasena,repcontrasena,rut)
 
         }
 
