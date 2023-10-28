@@ -27,4 +27,8 @@
     <string name="complaint_telefono">Telefono</string>
     <string name="complaint_boton_denuciar">Denunciar</string>
     <string name="field">*Campo obligatorio</string>
+    <string name="input_qr">Ingrese codigo</string>
+    <string name="button_qr">Buscar</string>
+    <string name="lugar">Lugar</string>
+    <string name="name">Nombre</string>
 </resources>

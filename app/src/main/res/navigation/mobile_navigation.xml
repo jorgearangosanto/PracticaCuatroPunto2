@@ -13,10 +13,19 @@
         android:id="@+id/navigation_captura"
         android:name="com.santo.practicacuatro.ui.captura.CapturaFragment"
         android:label="@string/captura_alias"
-        tools:layout="@layout/fragment_captura" />
+        tools:layout="@layout/fragment_captura" >
+        <action
+            android:id="@+id/action_navigation_captura_to_newLiquorFragment"
+            app:destination="@id/navigation_newLiquor" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_denuncia"
         android:name="com.santo.practicacuatro.ui.denuncia.DenunciaFragment"
         android:label="@string/denuncia_alias"
         tools:layout="@layout/fragment_denuncia" />
+    <fragment
+        android:id="@+id/navigation_newLiquor"
+        android:name="com.santo.practicacuatro.ui.newliquor.NewLiquorFragment"
+        android:label="fragment_new_liquor"
+        tools:layout="@layout/fragment_new_liquor" />
 </navigation>
