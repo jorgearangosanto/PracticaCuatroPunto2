@@ -17,6 +17,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginMainViewModel: LoginMainViewModel
 
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)

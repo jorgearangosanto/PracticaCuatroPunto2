@@ -1,6 +1,8 @@
 package com.santo.practicacuatro.ui.captura
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.santo.practicacuatro.R
 import com.santo.practicacuatro.databinding.FragmentCapturaBinding
 import com.santo.practicacuatro.model.Liquor
-import com.santo.practicacuatro.ui.denuncia.DenunciaMainViewModel
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
+import com.google.zxing.integration.android.IntentIntegrator
 
 
 class CapturaFragment : Fragment() {
@@ -21,6 +21,8 @@ class CapturaFragment : Fragment() {
     private lateinit var capturaBinding: FragmentCapturaBinding
     private lateinit var liquorAdapter: LiquorAdapter
     private var liquorsList = mutableListOf<Liquor?>()
+
+
 
 
 
@@ -35,8 +37,15 @@ class CapturaFragment : Fragment() {
         val view = capturaBinding.root
 
 
+        capturaBinding.bottomScaner.setOnClickListener { initScanner() }
 
-        val mensaje5observer = Observer<String> {mensaje5 ->
+
+
+
+
+
+
+    val mensaje5observer = Observer<String> {mensaje5 ->
             Toast.makeText(requireActivity(), mensaje5, Toast.LENGTH_LONG).show()}
         capturaMainViewModel.mensaje5.observe(viewLifecycleOwner,mensaje5observer)
 
@@ -45,7 +54,9 @@ class CapturaFragment : Fragment() {
 
         }
         capturaBinding.buttonQr.setOnClickListener {
-            capturaMainViewModel.loadLiquors()
+            capturaMainViewModel.loadLiquors(capturaBinding.textInputQr.text.toString())
+            //capturaMainViewModel.loquellego(capturaBinding.textInputQr.text.toString())
+            //ComplaintRepository.capturaBinding.buttonQr.text.toString()
         }
 
        /* capturaMainViewModel.liquorErase.observe(viewLifecycleOwner,){
@@ -72,13 +83,43 @@ class CapturaFragment : Fragment() {
 
 
 
+
         return view
     }
 
-   /* private fun onLiquorLongItemClicked(liquor: Liquor?) {
-        capturaMainViewModel.deleteLiquor(liquor)
+    private fun initScanner() {
+        IntentIntegrator(requireActivity()).initiateScan()
 
-    }*/
+
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+                Log.d("lector","ok")
+
+
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            if (result.contents == null) {
+                Toast.makeText(requireActivity(), "Cancelado", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(requireActivity(), "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG).show()
+                capturaBinding.textInputQr.setText(result.contents)
+
+
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+
+
+        }
+    }
+
+
+    /* private fun onLiquorLongItemClicked(liquor: Liquor?) {
+         capturaMainViewModel.deleteLiquor(liquor)
+
+     }*/
 
     private fun onLiquorItemClicked(liquor: Liquor?) {
 
